@@ -3,30 +3,25 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Dutch Angle Studio — Front-End Development, Web Design & Creative Direction by Abdullah Khan." />
     <meta name="theme-color" content="#0A0A0A" />
 
-    <title> Abdullah Khan| Portfolio</title>
+    <title>Abdullah Khan | Portfolio</title>
 
-    <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONTS PRECONNECT & OPTIMIZED LOADING -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
 
-    <!-- GSAP & LENIS LIBRARIES -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
-
     <style>
         :root {
             --black: #0a0a0a;
             --white: #f5f5f0;
-            --gray: #9a9a95;
+            --gray: #b0b0a8; /* Improved contrast for accessibility */
             --line: rgba(255, 255, 255, 0.18);
             --dark-line: rgba(10, 10, 10, 0.16);
             --lime: #d6ff3f;
@@ -138,25 +133,11 @@
         }
 
         @keyframes grainMove {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-
-            25% {
-                transform: translate3d(-2%, 2%, 0);
-            }
-
-            50% {
-                transform: translate3d(2%, -2%, 0);
-            }
-
-            75% {
-                transform: translate3d(1%, 2%, 0);
-            }
-
-            100% {
-                transform: translate3d(-1%, -2%, 0);
-            }
+            0% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-2%, 2%, 0); }
+            50% { transform: translate3d(2%, -2%, 0); }
+            75% { transform: translate3d(1%, 2%, 0); }
+            100% { transform: translate3d(-1%, -2%, 0); }
         }
 
         .editorial-lines {
@@ -177,13 +158,8 @@
             background: white;
         }
 
-        .editorial-lines::before {
-            left: 3vw;
-        }
-
-        .editorial-lines::after {
-            right: 3vw;
-        }
+        .editorial-lines::before { left: 3vw; }
+        .editorial-lines::after { right: 3vw; }
 
         /* PRELOADER */
         .preloader {
@@ -247,7 +223,7 @@
             justify-content: space-between;
             font-size: 9px;
             letter-spacing: 0.12em;
-            color: #666;
+            color: #888;
             text-transform: uppercase;
         }
 
@@ -277,9 +253,7 @@
             transition: height 0.45s ease, transform 0.45s ease;
         }
 
-        .nav.scrolled {
-            height: 72px;
-        }
+        .nav.scrolled { height: 72px; }
 
         .nav-inner {
             width: var(--container);
@@ -315,15 +289,13 @@
         }
 
         .brand-stack span:last-child {
-            opacity: 0.55;
+            opacity: 0.75;
             font-size: 11px;
             letter-spacing: 0.13em;
             margin-top: 5px;
         }
 
-        .brand-stack span:first-child {
-            font-size: 18px;
-        }
+        .brand-stack span:first-child { font-size: 18px; }
 
         .nav-right {
             display: flex;
@@ -401,9 +373,7 @@
             transform: translateY(-2px);
         }
 
-        .social-icon-btn:hover svg {
-            transform: scale(1.1);
-        }
+        .social-icon-btn:hover svg { transform: scale(1.1); }
 
         .menu-toggle {
             display: none;
@@ -436,9 +406,7 @@
             clip-path: inset(0 0 100% 0);
         }
 
-        .mobile-menu-inner {
-            width: 100%;
-        }
+        .mobile-menu-inner { width: 100%; }
 
         .mobile-menu-meta {
             margin-bottom: 35px;
@@ -522,7 +490,7 @@
             font-size: 15px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .hero-title {
@@ -545,9 +513,7 @@
             transform: translateY(115%);
         }
 
-        .hero-title .side {
-            text-align: right;
-        }
+        .hero-title .side { text-align: right; }
 
         .hero-scroll {
             position: absolute;
@@ -560,7 +526,7 @@
             font-size: 9px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.75);
             writing-mode: vertical-rl;
         }
 
@@ -588,9 +554,7 @@
             align-items: start;
         }
 
-        .intro-copy {
-            max-width: 1100px;
-        }
+        .intro-copy { max-width: 1100px; }
 
         .intro-heading {
             margin: 0;
@@ -622,13 +586,13 @@
             max-width: 460px;
             font-size: 15px;
             line-height: 1.6;
-            color: #4d4d49;
+            color: #333330;
         }
 
         .intro-index {
             text-align: right;
             font-size: 10px;
-            color: #777;
+            color: #555;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
@@ -744,9 +708,7 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .work-slide:hover .work-image img {
-            transform: scale(1.05);
-        }
+        .work-slide:hover .work-image img { transform: scale(1.05); }
 
         .work-info {
             display: grid;
@@ -813,7 +775,7 @@
             max-width: 500px;
             font-size: 14px;
             line-height: 1.6;
-            color: #595954;
+            color: #444440;
         }
 
         .archive-item {
@@ -831,13 +793,8 @@
             color: inherit;
         }
 
-        .archive-item:nth-child(even) .archive-visual {
-            order: 2;
-        }
-
-        .archive-item:nth-child(even) .archive-content {
-            order: 1;
-        }
+        .archive-item:nth-child(even) .archive-visual { order: 2; }
+        .archive-item:nth-child(even) .archive-content { order: 1; }
 
         .archive-visual {
             position: relative;
@@ -855,19 +812,15 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .archive-item:hover .archive-visual img {
-            transform: scale(1.05);
-        }
+        .archive-item:hover .archive-visual img { transform: scale(1.05); }
 
-        .archive-content {
-            position: relative;
-        }
+        .archive-content { position: relative; }
 
         .archive-number {
             margin-bottom: 35px;
             font-size: 10px;
             letter-spacing: 0.1em;
-            color: #777;
+            color: #555;
         }
 
         .archive-project-title {
@@ -883,7 +836,7 @@
         .archive-project-desc {
             max-width: 400px;
             margin-top: 45px;
-            color: #5d5d58;
+            color: #444440;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -895,7 +848,7 @@
             font-size: 9px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #777;
+            color: #555;
         }
 
         /* CUSTOM CURSOR */
@@ -999,12 +952,10 @@
 
         .process-index {
             font-size: 11px;
-            color: #777;
+            color: #555;
         }
 
-        .process-steps {
-            border-top: 1px solid var(--dark-line);
-        }
+        .process-steps { border-top: 1px solid var(--dark-line); }
 
         .process-step {
             min-height: 95px;
@@ -1016,12 +967,10 @@
             opacity: 0.25;
         }
 
-        .process-step.active {
-            opacity: 1;
-        }
+        .process-step.active { opacity: 1; }
 
         .process-step-number {
-            color: #777;
+            color: #555;
             font-size: 10px;
         }
 
@@ -1041,7 +990,7 @@
 
         .process-step-description {
             max-width: 270px;
-            color: #666;
+            color: #444;
             font-size: 11px;
             line-height: 1.5;
         }
@@ -1105,7 +1054,7 @@
             max-width: 580px;
             font-size: clamp(16px, 1.5vw, 22px);
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .studio-meta {
@@ -1173,9 +1122,7 @@
             text-transform: uppercase;
         }
 
-        .reel-heading span {
-            display: block;
-        }
+        .reel-heading span { display: block; }
 
         .reel-bottom {
             display: flex;
@@ -1213,7 +1160,7 @@
 
         .reel-caption {
             max-width: 300px;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.75);
             font-size: 11px;
             line-height: 1.5;
             text-align: right;
@@ -1294,9 +1241,7 @@
             text-transform: uppercase;
         }
 
-        .marquee-item::after {
-            content: "—";
-        }
+        .marquee-item::after { content: "—"; }
 
         /* CLIENTS / ALL PROJECTS LIST SECTION */
         .clients {
@@ -1327,7 +1272,7 @@
             max-width: 300px;
             font-size: 12px;
             line-height: 1.5;
-            color: #666;
+            color: #444;
         }
 
         /* Search & Filter Controls */
@@ -1362,9 +1307,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .project-search-input:focus {
-            border-color: var(--black);
-        }
+        .project-search-input:focus { border-color: var(--black); }
 
         .filter-buttons-wrapper {
             display: flex;
@@ -1376,7 +1319,7 @@
             padding: 10px 20px;
             border: 1px solid var(--dark-line);
             background: transparent;
-            color: #666;
+            color: #444;
             font-family: var(--font-display);
             font-size: 10px;
             letter-spacing: 0.1em;
@@ -1413,9 +1356,7 @@
             transition: opacity 0.3s ease, min-height 0.3s ease;
         }
 
-        .client-row.hidden {
-            display: none !important;
-        }
+        .client-row.hidden { display: none !important; }
 
         .client-name {
             font-family: var(--font-display);
@@ -1428,12 +1369,10 @@
 
         .client-index {
             font-size: 10px;
-            color: #777;
+            color: #555;
         }
 
-        .client-row:hover .client-name {
-            transform: translateX(20px);
-        }
+        .client-row:hover .client-name { transform: translateX(20px); }
 
         /* View More Button */
         .view-more-container {
@@ -1463,9 +1402,7 @@
             transform: translateY(-2px);
         }
 
-        .view-more-btn.hidden {
-            display: none !important;
-        }
+        .view-more-btn.hidden { display: none !important; }
 
         /* CTA */
         .cta {
@@ -1521,9 +1458,7 @@
             transition: transform 0.4s ease;
         }
 
-        .cta-link:hover .cta-arrow {
-            transform: translate(10px, -10px);
-        }
+        .cta-link:hover .cta-arrow { transform: translate(10px, -10px); }
 
         .cta-meta {
             margin-top: 14vh;
@@ -1587,15 +1522,11 @@
             text-transform: uppercase;
         }
 
-        .back-top {
-            cursor: pointer;
-        }
+        .back-top { cursor: pointer; }
 
         /* RESPONSIVE TABLET / MOBILE */
         @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
 
             .intro-grid,
             .archive-header,
@@ -1604,31 +1535,23 @@
                 gap: 35px;
             }
 
-            .intro-bottom {
-                margin-top: 8vh;
-            }
+            .intro-bottom { margin-top: 8vh; }
 
             .archive-item {
                 min-height: auto;
                 padding: 12vh 0;
             }
 
-            .archive-visual {
-                height: 65vh;
-            }
+            .archive-visual { height: 65vh; }
 
             .process-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .process-index {
-                display: none;
-            }
+            .process-index { display: none; }
 
-            .footer-top {
-                grid-template-columns: 1fr;
-            }
+            .footer-top { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 767px) {
@@ -1637,34 +1560,22 @@
                 --nav-height: 72px;
             }
 
-            .editorial-lines {
-                opacity: 0.04;
-            }
+            .editorial-lines { opacity: 0.04; }
 
             .nav {
                 mix-blend-mode: normal;
                 color: white;
             }
 
-            .nav-right .social-icon-list {
-                display: none;
-            }
+            .nav-right .social-icon-list { display: none; }
 
-            .menu-toggle {
-                display: flex;
-            }
+            .menu-toggle { display: flex; }
 
-            .hero {
-                height: 150vh;
-            }
+            .hero { height: 150vh; }
 
-            .hero-pin {
-                height: 100vh;
-            }
+            .hero-pin { height: 100vh; }
 
-            .hero-content {
-                padding-bottom: 10vh;
-            }
+            .hero-content { padding-bottom: 10vh; }
 
             .hero-meta {
                 flex-direction: column;
@@ -1679,18 +1590,14 @@
                 line-height: 0.84;
             }
 
-            .hero-scroll {
-                display: none;
-            }
+            .hero-scroll { display: none; }
 
             .intro {
                 min-height: auto;
                 padding: 15vh 0;
             }
 
-            .intro-heading {
-                font-size: clamp(52px, 14vw, 100px);
-            }
+            .intro-heading { font-size: clamp(52px, 14vw, 100px); }
 
             .intro-bottom {
                 grid-template-columns: 1fr;
@@ -1698,9 +1605,7 @@
                 margin-top: 8vh;
             }
 
-            .intro-index {
-                text-align: left;
-            }
+            .intro-index { text-align: left; }
 
             .horizontal-pin {
                 height: auto;
@@ -1729,17 +1634,11 @@
                 gap: 12vh;
             }
 
-            .work-slide {
-                width: 100%;
-            }
+            .work-slide { width: 100%; }
 
-            .work-image {
-                height: 58vh;
-            }
+            .work-image { height: 58vh; }
 
-            .work-info {
-                grid-template-columns: 40px 1fr;
-            }
+            .work-info { grid-template-columns: 40px 1fr; }
 
             .work-category {
                 grid-column: 2;
@@ -1747,17 +1646,11 @@
                 margin-top: -10px;
             }
 
-            .archive {
-                padding-top: 12vh;
-            }
+            .archive { padding-top: 12vh; }
 
-            .archive-header {
-                margin-bottom: 5vh;
-            }
+            .archive-header { margin-bottom: 5vh; }
 
-            .archive-title {
-                font-size: clamp(58px, 16vw, 105px);
-            }
+            .archive-title { font-size: clamp(58px, 16vw, 105px); }
 
             .archive-item,
             .archive-item:nth-child(even) {
@@ -1772,21 +1665,13 @@
                 order: initial;
             }
 
-            .archive-visual {
-                height: 65vh;
-            }
+            .archive-visual { height: 65vh; }
 
-            .archive-project-title {
-                font-size: clamp(54px, 15vw, 105px);
-            }
+            .archive-project-title { font-size: clamp(54px, 15vw, 105px); }
 
-            .archive-project-desc {
-                margin-top: 30px;
-            }
+            .archive-project-desc { margin-top: 30px; }
 
-            .process {
-                height: auto;
-            }
+            .process { height: auto; }
 
             .process-pin {
                 height: auto;
@@ -1804,25 +1689,15 @@
                 grid-template-columns: 40px 1fr;
             }
 
-            .process-step-content {
-                display: block;
-            }
+            .process-step-content { display: block; }
 
-            .process-step-description {
-                margin-top: 6px;
-            }
+            .process-step-description { margin-top: 6px; }
 
-            .studio {
-                min-height: 115vh;
-            }
+            .studio { min-height: 115vh; }
 
-            .studio-heading {
-                font-size: clamp(62px, 17vw, 115px);
-            }
+            .studio-heading { font-size: clamp(62px, 17vw, 115px); }
 
-            .studio-copy {
-                font-size: 15px;
-            }
+            .studio-copy { font-size: 15px; }
 
             .studio-meta {
                 display: grid;
@@ -1830,21 +1705,13 @@
                 gap: 20px;
             }
 
-            .reel {
-                min-height: 100svh;
-            }
+            .reel { min-height: 100svh; }
 
-            .reel-content {
-                padding: 12vh 0 6vh;
-            }
+            .reel-content { padding: 12vh 0 6vh; }
 
-            .reel-heading {
-                font-size: clamp(70px, 20vw, 135px);
-            }
+            .reel-heading { font-size: clamp(70px, 20vw, 135px); }
 
-            .reel-bottom {
-                align-items: flex-end;
-            }
+            .reel-bottom { align-items: flex-end; }
 
             .play-button {
                 width: 85px;
@@ -1861,49 +1728,27 @@
                 height: 70vh;
             }
 
-            .marquee {
-                padding: 20px 0;
-            }
+            .marquee { padding: 20px 0; }
 
-            .clients {
-                padding: 13vh 0;
-            }
+            .clients { padding: 13vh 0; }
 
-            .clients-header {
-                display: block;
-            }
+            .clients-header { display: block; }
 
-            .clients-title {
-                font-size: clamp(60px, 17vw, 110px);
-            }
+            .clients-title { font-size: clamp(60px, 17vw, 110px); }
 
-            .clients-copy {
-                margin-top: 35px;
-            }
+            .clients-copy { margin-top: 35px; }
 
-            .client-row {
-                min-height: 80px;
-            }
+            .client-row { min-height: 80px; }
 
-            .client-name {
-                font-size: clamp(25px, 7vw, 45px);
-            }
+            .client-name { font-size: clamp(25px, 7vw, 45px); }
 
-            .cta {
-                min-height: 90vh;
-            }
+            .cta { min-height: 90vh; }
 
-            .cta-heading {
-                font-size: clamp(65px, 19vw, 130px);
-            }
+            .cta-heading { font-size: clamp(65px, 19vw, 130px); }
 
-            .cta-meta {
-                margin-top: 10vh;
-            }
+            .cta-meta { margin-top: 10vh; }
 
-            .footer-brand {
-                font-size: clamp(55px, 16vw, 105px);
-            }
+            .footer-brand { font-size: clamp(55px, 16vw, 105px); }
 
             .footer-bottom {
                 margin-top: 10vh;
@@ -1920,9 +1765,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto !important;
-            }
+            html { scroll-behavior: auto !important; }
 
             *,
             *::before,
@@ -1932,9 +1775,7 @@
                 transition-duration: 0.01ms !important;
             }
 
-            .grain {
-                display: none;
-            }
+            .grain { display: none; }
         }
     </style>
 </head>
@@ -2047,47 +1888,43 @@
         </div>
 
         <div class="mobile-socials social-icon-list">
-            <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn"><svg
+            <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Instagram"><svg
                     viewBox="0 0 24 24">
                     <path
                         d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
                 </svg></a>
-            <a href="https://www.facebook.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn"><svg
+            <a href="https://www.facebook.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn" aria-label="Facebook"><svg
                     viewBox="0 0 24 24">
                     <path
                         d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.5 5H18V0h-3.808C10.592 0 9 1.847 9 5.18V8z" />
                 </svg></a>
-            <a href="https://github.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn"><svg
+            <a href="https://github.com/kkabdull247" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub"><svg
                     viewBox="0 0 24 24">
                     <path
                         d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg></a>
-            <!-- <a href="mailto:kkabdullah24@gmail.com" class="social-icon-btn"><svg viewBox="0 0 24 24">
-                    <path
-                        d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 6.788l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.059l4.616-3.741v9.348l-4.616-5.607z" />
-                </svg></a> -->
-            <a href="https://wa.me/923331279569" target="_blank" rel="noopener" class="social-icon-btn"><svg
+            <a href="https://wa.me/923331279569" target="_blank" rel="noopener" class="social-icon-btn" aria-label="WhatsApp"><svg
                     viewBox="0 0 24 24">
                     <path
                         d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
                 </svg></a>
-            <a href="https://x.com/kkabdull98" target="_blank" rel="noopener" class="social-icon-btn"><svg
+            <a href="https://x.com/kkabdull98" target="_blank" rel="noopener" class="social-icon-btn" aria-label="X (Twitter)"><svg
                     viewBox="0 0 24 24">
                     <path
                         d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg></a>
             <a href="https://www.linkedin.com/in/abdullah-khan-258504253/" target="_blank" rel="noopener"
-                class="social-icon-btn"><svg viewBox="0 0 24 24">
+                class="social-icon-btn" aria-label="LinkedIn"><svg viewBox="0 0 24 24">
                     <path
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg></a>
-                <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
-                        class="social-icon-btn" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
+            <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
+                class="social-icon-btn" aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+            </a>
         </div>
     </div>
 
@@ -2097,6 +1934,7 @@
         <section class="hero section" id="hero">
             <div class="hero-pin">
                 <div class="hero-media">
+                    <!-- OPTIMIZED: Poster added, autoplay video -->
                     <video autoplay loop muted playsinline poster="./pexels-dongdilac-37586668.jpg">
                         <source src="" type="video/mp4" />
                     </video>
@@ -2241,103 +2079,103 @@
 
                 <div class="horizontal-track" id="horizontalTrack">
 
-    <!-- WORK 01: PEXEL SNAG -->
-    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">01</div>
-            <div class="work-title">PEXEL SNAG</div>
-            <div class="work-category">IMAGE EXTRACTOR<br />JS, GSAP</div>
-        </div>
-    </a>
+                    <!-- WORK 01: PEXEL SNAG -->
+                    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">01</div>
+                            <div class="work-title">PEXEL SNAG</div>
+                            <div class="work-category">IMAGE EXTRACTOR<br />JS, GSAP</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 02: SAAF SAFAI -->
-    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">02</div>
-            <div class="work-title">SAAFSAFAI</div>
-            <div class="work-category">CAR WASH<br />Brand, JS</div>
-        </div>
-    </a>
+                    <!-- WORK 02: SAAF SAFAI -->
+                    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">02</div>
+                            <div class="work-title">SAAFSAFAI</div>
+                            <div class="work-category">CAR WASH<br />Brand, JS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 03: THINKBOUND -->
-    <a href="https://www.thinkbound.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./thinkbound.jpeg" alt="Thinkbound" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">03</div>
-            <div class="work-title">THINKBOUND</div>
-            <div class="work-category">DIGITAL AGENCY<br />REACT & WORDPRESS</div>
-        </div>
-    </a>
+                    <!-- WORK 03: ENGLISH -->
+                    <a href="https://englishcares.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./englishpng.png" alt="Thinkbound" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">03</div>
+                            <div class="work-title">ENGLISH CARES</div>
+                            <div class="work-category">BRANDING<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 04: WAIND K -->
-    <a href="https://wiandk.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="waindk.jpeg" alt="Waind K" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">04</div>
-            <div class="work-title">WAINDK</div>
-            <div class="work-category">ARCHITECTURE & DESIGN<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <!-- WORK 04: KAMENSIKY -->
+                    <a href="https://careandrepair.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="kaminskiy.png" alt="Waind K" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">04</div>
+                            <div class="work-title">KAMENSIKY</div>
+                            <div class="work-category">CARE & REPAIR<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 05: MUUV -->
-    <a href="https://www.muuv.ae/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="muuv.jpeg" alt="MUUV" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">05</div>
-            <div class="work-title">MUUV</div>
-            <div class="work-category">MOBILITY PLATFORM<br />REACT, JS</div>
-        </div>
-    </a>
+                    <!-- WORK 05: BODY & BEAT -->
+                    <a href="https://bbprpakistan.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="bodybeat.png" alt="MUUV" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">05</div>
+                            <div class="work-title">BODYBEAT GROUP</div>
+                            <div class="work-category">EVENTS MANAGMENT<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 06: OSMOSIP -->
-    <a href="https://www.osmosip.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="osmosip.jpeg" alt="Osmosip" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">06</div>
-            <div class="work-title">OSMOSIP</div>
-            <div class="work-category">BEVERAGE & BRANDING<br />WEB DESIGN, JS</div>
-        </div>
-    </a>
+                    <!-- WORK 06: FITTRACK PRO -->
+                    <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="fitness.png" alt="Osmosip" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">06</div>
+                            <div class="work-title">FITTRACK PRO</div>
+                            <div class="work-category">HEALTH & FITNESS<br />MERN - FULLSTACK</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 07: THINK ONE YACHTS -->
-    <a href="https://t1yachts.ae/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="thinkoneyachts.jpeg" alt="Think One Yachts" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">07</div>
-            <div class="work-title">THINK ONE YACHTS</div>
-            <div class="work-category">LUXURY CHARTER<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <!-- WORK 07: PURE SMILE DENTAL -->
+                    <a href="https://puresmile-dentist.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="puredental.png" alt="Think One Yachts" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">07</div>
+                            <div class="work-title">PURE SMILE DENTAL</div>
+                            <div class="work-category">DENTAL TREATMENTS<br />FRONTEND</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 08: TOP SPIN TECHNOLOGIES -->
-    <a href="https://topspin360.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="topspin.jpeg" alt="Top Spin Technologies" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">08</div>
-            <div class="work-title">TOP SPIN TECH</div>
-            <div class="work-category">TECH SOLUTIONS<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <!-- WORK 08: JUSTIN IS ALIVE -->
+                    <a href="https://justinisalive.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="justin.png" alt="Top Spin Technologies" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">08</div>
+                            <div class="work-title">JUSTIN IS ALIVE</div>
+                            <div class="work-category">PERSONAL PORTFOLIO<br />FRONTEND</div>
+                        </div>
+                    </a>
 
-</div>
+                </div>
             </div>
         </section>
 
@@ -2357,7 +2195,7 @@
             <a href="https://luminaresorts.vercel.app" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=75"
                         alt="Lumina Resorts App" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2374,7 +2212,7 @@
             <a href="https://moonsoon-dinings.vercel.app" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=75"
                         alt="Moonsoon Dinings Platform" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2391,7 +2229,7 @@
             <a href="https://dev-moonsoonorignals.pantheonsite.io" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=75"
                         alt="Moonsoon Originals Store" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2405,7 +2243,7 @@
             </a>
         </section>
 
-        <!-- ALL PROJECTS OVERVIEW (SIMPLE LIST FORMAT WITH SEARCH & VIEW MORE) -->
+        <!-- ALL PROJECTS OVERVIEW -->
         <section class="clients section" id="all-projects">
             <div class="clients-header">
                 <h2 class="clients-title">ALL LIVE<br />PROJECTS</h2>
@@ -2417,7 +2255,7 @@
             <div class="project-controls">
                 <div class="search-wrapper">
                     <input type="text" id="projectSearch" class="project-search-input"
-                        placeholder="Search projects by name..." />
+                        placeholder="Search projects by name..." aria-label="Search projects by name" />
                 </div>
                 <div class="filter-buttons-wrapper">
                     <button class="filter-btn active" data-category="all">All</button>
@@ -2428,7 +2266,6 @@
                 </div>
             </div>
 
-            <!-- Clean Text Row List With Individual Preview Image Attributes -->
             <div class="client-list" id="clientListContainer">
                 <a href="https://groomers.vercel.app" target="_blank" rel="noopener"
                     class="client-row list-preview-hover" data-category="frontend" data-title="groomer's salon"
@@ -2605,7 +2442,7 @@
         <!-- STUDIO / ABOUT -->
         <section class="studio section" id="studio">
             <div class="studio-bg">
-                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=2200&q=85"
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=75"
                     alt="Studio background" loading="lazy" />
             </div>
             <div class="studio-overlay"></div>
@@ -2616,7 +2453,6 @@
                     front-end technologies, clean CSS architectures, JavaScript, React, and backend integration with
                     PHP/MySQL.</p>
 
-                <!-- Social Icons in About Section -->
                 <div class="social-icon-list" style="margin-top: 25px;">
                     <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener"
                         class="social-icon-btn" aria-label="Instagram"><svg viewBox="0 0 24 24">
@@ -2691,8 +2527,8 @@
             <button class="reel-close" id="closeReel">
                 <span></span><span></span> CLOSE REEL
             </button>
-            <video autoplay loop muted class="reel-video " id="reelVideo" controls playsinline preload="metadata"
-                poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85">
+            <!-- OPTIMIZED: preload="none" prevents loading 2.5MB video on page startup -->
+            <video class="reel-video" id="reelVideo" controls playsinline preload="none">
                 <source src="./I’m_a_Junior_Front_End_Develop.mp4" type="video/mp4" />
             </video>
         </div>
@@ -2802,7 +2638,7 @@
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg></a>
-                        <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
+                    <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
                         class="social-icon-btn" aria-label="YouTube">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -2818,9 +2654,14 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- OPTIMIZED: JS Scripts moved to bottom with DEFER -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        (() => {
+        document.addEventListener("DOMContentLoaded", () => {
             "use strict";
 
             if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
@@ -3033,7 +2874,6 @@
                 });
             }
 
-            /* HOVER IMAGE PREVIEW SYSTEM FOR ALL PROJECTS LIST */
             function initProjectListHoverPreviews() {
                 if (isTouch || reducedMotion || !hoverPreview || !hoverPreviewImg) return;
 
@@ -3184,7 +3024,6 @@
                 gsap.to(".cta-line span", { y: 0, duration: 1.1, stagger: 0.09, ease: "power4.out", scrollTrigger: { trigger: ".cta", start: "top 70%" } });
             }
 
-            /* SEARCH, CATEGORY FILTER & VIEW MORE SYSTEM */
             function initProjectListSystem() {
                 const searchInput = document.getElementById('projectSearch');
                 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -3280,8 +3119,8 @@
                 initProjectListSystem();
             }
 
-            document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", init) : init();
-        })();
+            init();
+        });
     </script>
 </body>
 
