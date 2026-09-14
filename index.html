@@ -10,20 +10,32 @@
 
     <title>Abdullah Khan | Portfolio</title>
 
-    <!-- GOOGLE FONTS PRECONNECT & OPTIMIZED LOADING -->
+    <!-- CRITICAL PRECONNECTIONS -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+    <!-- ASYNCHRONOUS NON-BLOCKING FONT LOADING -->
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" />
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
+        rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet" />
+    </noscript>
 
     <style>
         :root {
             --black: #0a0a0a;
             --white: #f5f5f0;
-            --gray: #b0b0a8;
+            --gray: #2b2b2b;
+            /* Contrast fixed for high accessibility */
+            --gray-light: #6e6e68;
             --line: rgba(255, 255, 255, 0.18);
-            --dark-line: rgba(10, 10, 10, 0.16);
+            --dark-line: rgba(10, 10, 10, 0.22);
             --lime: #d6ff3f;
 
             --font-display: "Space Grotesk", sans-serif;
@@ -65,6 +77,7 @@
         img {
             display: block;
             max-width: 100%;
+            height: auto;
         }
 
         button,
@@ -94,6 +107,7 @@
             margin: 0 auto;
         }
 
+        /* ACCESSIBILITY CONTRAST UPDATES FOR EYEBROW AND LABELS */
         .eyebrow {
             display: flex;
             align-items: center;
@@ -103,6 +117,7 @@
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--gray);
+            font-weight: 600;
         }
 
         .eyebrow::before {
@@ -126,17 +141,31 @@
             width: 200%;
             height: 200%;
             pointer-events: none;
-            opacity: 0.05;
+            opacity: 0.04;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
             animation: grainMove 0.25s steps(2) infinite;
         }
 
         @keyframes grainMove {
-            0% { transform: translate3d(0, 0, 0); }
-            25% { transform: translate3d(-2%, 2%, 0); }
-            50% { transform: translate3d(2%, -2%, 0); }
-            75% { transform: translate3d(1%, 2%, 0); }
-            100% { transform: translate3d(-1%, -2%, 0); }
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            25% {
+                transform: translate3d(-2%, 2%, 0);
+            }
+
+            50% {
+                transform: translate3d(2%, -2%, 0);
+            }
+
+            75% {
+                transform: translate3d(1%, 2%, 0);
+            }
+
+            100% {
+                transform: translate3d(-1%, -2%, 0);
+            }
         }
 
         .editorial-lines {
@@ -157,10 +186,15 @@
             background: white;
         }
 
-        .editorial-lines::before { left: 3vw; }
-        .editorial-lines::after { right: 3vw; }
+        .editorial-lines::before {
+            left: 3vw;
+        }
 
-        /* PRELOADER - FAST & SMOOTH */
+        .editorial-lines::after {
+            right: 3vw;
+        }
+
+        /* PRELOADER */
         .preloader {
             position: fixed;
             inset: 0;
@@ -196,7 +230,7 @@
         .preloader-percent {
             font-size: 11px;
             letter-spacing: 0.1em;
-            color: var(--gray);
+            color: var(--white);
         }
 
         .preloader-track {
@@ -220,7 +254,7 @@
             justify-content: space-between;
             font-size: 9px;
             letter-spacing: 0.12em;
-            color: var(--gray);
+            color: var(--white);
             text-transform: uppercase;
         }
 
@@ -250,7 +284,9 @@
             transition: height 0.45s ease, transform 0.45s ease;
         }
 
-        .nav.scrolled { height: 72px; }
+        .nav.scrolled {
+            height: 72px;
+        }
 
         .nav-inner {
             width: var(--container);
@@ -286,13 +322,15 @@
         }
 
         .brand-stack span:last-child {
-            opacity: 0.75;
+            opacity: 0.85;
             font-size: 11px;
             letter-spacing: 0.13em;
             margin-top: 5px;
         }
 
-        .brand-stack span:first-child { font-size: 18px; }
+        .brand-stack span:first-child {
+            font-size: 18px;
+        }
 
         .nav-right {
             display: flex;
@@ -369,7 +407,9 @@
             transform: translateY(-2px);
         }
 
-        .social-icon-btn:hover svg { transform: scale(1.1); }
+        .social-icon-btn:hover svg {
+            transform: scale(1.1);
+        }
 
         .menu-toggle {
             display: none;
@@ -402,11 +442,13 @@
             clip-path: inset(0 0 100% 0);
         }
 
-        .mobile-menu-inner { width: 100%; }
+        .mobile-menu-inner {
+            width: 100%;
+        }
 
         .mobile-menu-meta {
             margin-bottom: 35px;
-            color: var(--gray);
+            color: var(--white);
             font-size: 10px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -429,7 +471,7 @@
             flex-wrap: wrap;
         }
 
-        /* HERO - CLEAN IMAGE BACKDROP */
+        /* HERO */
         .hero {
             height: 200vh;
             background: var(--black);
@@ -487,7 +529,7 @@
             font-size: 15px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .hero-title {
@@ -510,7 +552,9 @@
             transform: translateY(115%);
         }
 
-        .hero-title .side { text-align: right; }
+        .hero-title .side {
+            text-align: right;
+        }
 
         .hero-scroll {
             position: absolute;
@@ -523,7 +567,7 @@
             font-size: 9px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
             writing-mode: vertical-rl;
         }
 
@@ -551,7 +595,9 @@
             align-items: start;
         }
 
-        .intro-copy { max-width: 1100px; }
+        .intro-copy {
+            max-width: 1100px;
+        }
 
         .intro-heading {
             margin: 0;
@@ -583,15 +629,16 @@
             max-width: 460px;
             font-size: 15px;
             line-height: 1.6;
-            color: #333330;
+            color: #1a1a1a;
         }
 
         .intro-index {
             text-align: right;
-            font-size: 10px;
-            color: #555;
+            font-size: 11px;
+            color: #1a1a1a;
             letter-spacing: 0.1em;
             text-transform: uppercase;
+            font-weight: 500;
         }
 
         /* SKILLS GRID SECTION */
@@ -626,7 +673,7 @@
         .skill-bar {
             width: 100%;
             height: 2px;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(0, 0, 0, 0.15);
             margin-top: 10px;
             position: relative;
         }
@@ -705,7 +752,9 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .work-slide:hover .work-image img { transform: scale(1.05); }
+        .work-slide:hover .work-image img {
+            transform: scale(1.05);
+        }
 
         .work-info {
             display: grid;
@@ -716,7 +765,7 @@
         }
 
         .work-number {
-            color: var(--gray);
+            color: var(--white);
             font-size: 10px;
             letter-spacing: 0.08em;
         }
@@ -729,7 +778,7 @@
         }
 
         .work-category {
-            color: var(--gray);
+            color: var(--white);
             font-size: 9px;
             line-height: 1.4;
             letter-spacing: 0.08em;
@@ -772,7 +821,7 @@
             max-width: 500px;
             font-size: 14px;
             line-height: 1.6;
-            color: #444440;
+            color: #1a1a1a;
         }
 
         .archive-item {
@@ -790,8 +839,13 @@
             color: inherit;
         }
 
-        .archive-item:nth-child(even) .archive-visual { order: 2; }
-        .archive-item:nth-child(even) .archive-content { order: 1; }
+        .archive-item:nth-child(even) .archive-visual {
+            order: 2;
+        }
+
+        .archive-item:nth-child(even) .archive-content {
+            order: 1;
+        }
 
         .archive-visual {
             position: relative;
@@ -809,15 +863,20 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .archive-item:hover .archive-visual img { transform: scale(1.05); }
+        .archive-item:hover .archive-visual img {
+            transform: scale(1.05);
+        }
 
-        .archive-content { position: relative; }
+        .archive-content {
+            position: relative;
+        }
 
         .archive-number {
             margin-bottom: 35px;
             font-size: 10px;
             letter-spacing: 0.1em;
-            color: #555;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
         .archive-project-title {
@@ -833,7 +892,7 @@
         .archive-project-desc {
             max-width: 400px;
             margin-top: 45px;
-            color: #444440;
+            color: #1a1a1a;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -845,7 +904,8 @@
             font-size: 9px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #555;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
         /* CUSTOM CURSOR */
@@ -885,7 +945,7 @@
             font-weight: 600;
         }
 
-        /* FLOATING HOVER PREVIEW IMAGE */
+        /* HOVER PREVIEW IMAGE */
         .project-hover-preview {
             position: fixed;
             top: 0;
@@ -911,7 +971,7 @@
             display: block;
         }
 
-        /* PROCESS */
+        /* PROCESS - HIGH CONTRAST FIX FOR ACCESSIBILITY */
         .process {
             height: 220vh;
             background: var(--white);
@@ -949,10 +1009,13 @@
 
         .process-index {
             font-size: 11px;
-            color: #555;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
-        .process-steps { border-top: 1px solid var(--dark-line); }
+        .process-steps {
+            border-top: 1px solid var(--dark-line);
+        }
 
         .process-step {
             min-height: 95px;
@@ -961,14 +1024,18 @@
             grid-template-columns: 80px 1fr;
             align-items: center;
             transition: opacity 0.4s ease;
-            opacity: 0.25;
+            opacity: 0.55;
+            /* Increased contrast for non-active states */
         }
 
-        .process-step.active { opacity: 1; }
+        .process-step.active {
+            opacity: 1;
+        }
 
         .process-step-number {
-            color: #555;
-            font-size: 10px;
+            color: #1a1a1a;
+            font-size: 11px;
+            font-weight: 600;
         }
 
         .process-step-content {
@@ -983,13 +1050,15 @@
             font-size: clamp(25px, 3vw, 48px);
             letter-spacing: -0.05em;
             text-transform: uppercase;
+            color: #0a0a0a;
         }
 
         .process-step-description {
             max-width: 270px;
-            color: #444;
+            color: #1a1a1a;
             font-size: 11px;
             line-height: 1.5;
+            font-weight: 500;
         }
 
         /* STUDIO */
@@ -1051,7 +1120,7 @@
             max-width: 580px;
             font-size: clamp(16px, 1.5vw, 22px);
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.85);
+            color: rgba(255, 255, 255, 0.9);
         }
 
         .studio-meta {
@@ -1064,7 +1133,7 @@
             font-size: 9px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: var(--gray);
+            color: var(--white);
         }
 
         /* MARQUEE */
@@ -1096,7 +1165,9 @@
             text-transform: uppercase;
         }
 
-        .marquee-item::after { content: "—"; }
+        .marquee-item::after {
+            content: "—";
+        }
 
         /* CLIENTS / ALL PROJECTS LIST SECTION */
         .clients {
@@ -1127,10 +1198,9 @@
             max-width: 300px;
             font-size: 12px;
             line-height: 1.5;
-            color: #444;
+            color: #1a1a1a;
         }
 
-        /* Search & Filter Controls */
         .project-controls {
             width: var(--container);
             margin: 0 auto 40px;
@@ -1162,7 +1232,9 @@
             transition: border-color 0.3s ease;
         }
 
-        .project-search-input:focus { border-color: var(--black); }
+        .project-search-input:focus {
+            border-color: var(--black);
+        }
 
         .filter-buttons-wrapper {
             display: flex;
@@ -1174,7 +1246,7 @@
             padding: 10px 20px;
             border: 1px solid var(--dark-line);
             background: transparent;
-            color: #444;
+            color: #1a1a1a;
             font-family: var(--font-display);
             font-size: 10px;
             letter-spacing: 0.1em;
@@ -1182,6 +1254,7 @@
             border-radius: 40px;
             transition: all 0.3s ease;
             cursor: pointer;
+            font-weight: 500;
         }
 
         .filter-btn:hover,
@@ -1210,7 +1283,9 @@
             transition: opacity 0.3s ease, min-height 0.3s ease;
         }
 
-        .client-row.hidden { display: none !important; }
+        .client-row.hidden {
+            display: none !important;
+        }
 
         .client-name {
             font-family: var(--font-display);
@@ -1223,10 +1298,13 @@
 
         .client-index {
             font-size: 10px;
-            color: #555;
+            color: #1a1a1a;
+            font-weight: 600;
         }
 
-        .client-row:hover .client-name { transform: translateX(20px); }
+        .client-row:hover .client-name {
+            transform: translateX(20px);
+        }
 
         .view-more-container {
             width: var(--container);
@@ -1255,7 +1333,9 @@
             transform: translateY(-2px);
         }
 
-        .view-more-btn.hidden { display: none !important; }
+        .view-more-btn.hidden {
+            display: none !important;
+        }
 
         /* CTA */
         .cta {
@@ -1311,14 +1391,16 @@
             transition: transform 0.4s ease;
         }
 
-        .cta-link:hover .cta-arrow { transform: translate(10px, -10px); }
+        .cta-link:hover .cta-arrow {
+            transform: translate(10px, -10px);
+        }
 
         .cta-meta {
             margin-top: 14vh;
             display: flex;
             justify-content: space-between;
             font-size: 9px;
-            color: var(--gray);
+            color: var(--white);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
@@ -1351,7 +1433,7 @@
         .footer-column-title {
             margin-bottom: 20px;
             font-size: 9px;
-            color: var(--gray);
+            color: var(--white);
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
@@ -1370,15 +1452,19 @@
             justify-content: space-between;
             align-items: center;
             font-size: 9px;
-            color: var(--gray);
+            color: var(--white);
             letter-spacing: 0.08em;
             text-transform: uppercase;
         }
 
-        .back-top { cursor: pointer; }
+        .back-top {
+            cursor: pointer;
+        }
 
         @media (max-width: 1024px) {
-            .nav-links { display: none; }
+            .nav-links {
+                display: none;
+            }
 
             .intro-grid,
             .archive-header,
@@ -1387,23 +1473,31 @@
                 gap: 35px;
             }
 
-            .intro-bottom { margin-top: 8vh; }
+            .intro-bottom {
+                margin-top: 8vh;
+            }
 
             .archive-item {
                 min-height: auto;
                 padding: 12vh 0;
             }
 
-            .archive-visual { height: 65vh; }
+            .archive-visual {
+                height: 65vh;
+            }
 
             .process-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .process-index { display: none; }
+            .process-index {
+                display: none;
+            }
 
-            .footer-top { grid-template-columns: 1fr; }
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 767px) {
@@ -1412,22 +1506,34 @@
                 --nav-height: 72px;
             }
 
-            .editorial-lines { opacity: 0.04; }
+            .editorial-lines {
+                opacity: 0.04;
+            }
 
             .nav {
                 mix-blend-mode: normal;
                 color: white;
             }
 
-            .nav-right .social-icon-list { display: none; }
+            .nav-right .social-icon-list {
+                display: none;
+            }
 
-            .menu-toggle { display: flex; }
+            .menu-toggle {
+                display: flex;
+            }
 
-            .hero { height: 150vh; }
+            .hero {
+                height: 150vh;
+            }
 
-            .hero-pin { height: 100vh; }
+            .hero-pin {
+                height: 100vh;
+            }
 
-            .hero-content { padding-bottom: 10vh; }
+            .hero-content {
+                padding-bottom: 10vh;
+            }
 
             .hero-meta {
                 flex-direction: column;
@@ -1442,14 +1548,18 @@
                 line-height: 0.84;
             }
 
-            .hero-scroll { display: none; }
+            .hero-scroll {
+                display: none;
+            }
 
             .intro {
                 min-height: auto;
                 padding: 15vh 0;
             }
 
-            .intro-heading { font-size: clamp(52px, 14vw, 100px); }
+            .intro-heading {
+                font-size: clamp(52px, 14vw, 100px);
+            }
 
             .intro-bottom {
                 grid-template-columns: 1fr;
@@ -1457,7 +1567,9 @@
                 margin-top: 8vh;
             }
 
-            .intro-index { text-align: left; }
+            .intro-index {
+                text-align: left;
+            }
 
             .horizontal-pin {
                 height: auto;
@@ -1486,11 +1598,17 @@
                 gap: 12vh;
             }
 
-            .work-slide { width: 100%; }
+            .work-slide {
+                width: 100%;
+            }
 
-            .work-image { height: 58vh; }
+            .work-image {
+                height: 58vh;
+            }
 
-            .work-info { grid-template-columns: 40px 1fr; }
+            .work-info {
+                grid-template-columns: 40px 1fr;
+            }
 
             .work-category {
                 grid-column: 2;
@@ -1498,11 +1616,17 @@
                 margin-top: -10px;
             }
 
-            .archive { padding-top: 12vh; }
+            .archive {
+                padding-top: 12vh;
+            }
 
-            .archive-header { margin-bottom: 5vh; }
+            .archive-header {
+                margin-bottom: 5vh;
+            }
 
-            .archive-title { font-size: clamp(58px, 16vw, 105px); }
+            .archive-title {
+                font-size: clamp(58px, 16vw, 105px);
+            }
 
             .archive-item,
             .archive-item:nth-child(even) {
@@ -1517,13 +1641,21 @@
                 order: initial;
             }
 
-            .archive-visual { height: 65vh; }
+            .archive-visual {
+                height: 65vh;
+            }
 
-            .archive-project-title { font-size: clamp(54px, 15vw, 105px); }
+            .archive-project-title {
+                font-size: clamp(54px, 15vw, 105px);
+            }
 
-            .archive-project-desc { margin-top: 30px; }
+            .archive-project-desc {
+                margin-top: 30px;
+            }
 
-            .process { height: auto; }
+            .process {
+                height: auto;
+            }
 
             .process-pin {
                 height: auto;
@@ -1541,15 +1673,25 @@
                 grid-template-columns: 40px 1fr;
             }
 
-            .process-step-content { display: block; }
+            .process-step-content {
+                display: block;
+            }
 
-            .process-step-description { margin-top: 6px; }
+            .process-step-description {
+                margin-top: 6px;
+            }
 
-            .studio { min-height: 115vh; }
+            .studio {
+                min-height: 115vh;
+            }
 
-            .studio-heading { font-size: clamp(62px, 17vw, 115px); }
+            .studio-heading {
+                font-size: clamp(62px, 17vw, 115px);
+            }
 
-            .studio-copy { font-size: 15px; }
+            .studio-copy {
+                font-size: 15px;
+            }
 
             .studio-meta {
                 display: grid;
@@ -1557,27 +1699,49 @@
                 gap: 20px;
             }
 
-            .marquee { padding: 20px 0; }
+            .marquee {
+                padding: 20px 0;
+            }
 
-            .clients { padding: 13vh 0; }
+            .clients {
+                padding: 13vh 0;
+            }
 
-            .clients-header { display: block; }
+            .clients-header {
+                display: block;
+            }
 
-            .clients-title { font-size: clamp(60px, 17vw, 110px); }
+            .clients-title {
+                font-size: clamp(60px, 17vw, 110px);
+            }
 
-            .clients-copy { margin-top: 35px; }
+            .clients-copy {
+                margin-top: 35px;
+            }
 
-            .client-row { min-height: 80px; }
+            .client-row {
+                min-height: 80px;
+            }
 
-            .client-name { font-size: clamp(25px, 7vw, 45px); }
+            .client-name {
+                font-size: clamp(25px, 7vw, 45px);
+            }
 
-            .cta { min-height: 90vh; }
+            .cta {
+                min-height: 90vh;
+            }
 
-            .cta-heading { font-size: clamp(65px, 19vw, 130px); }
+            .cta-heading {
+                font-size: clamp(65px, 19vw, 130px);
+            }
 
-            .cta-meta { margin-top: 10vh; }
+            .cta-meta {
+                margin-top: 10vh;
+            }
 
-            .footer-brand { font-size: clamp(55px, 16vw, 105px); }
+            .footer-brand {
+                font-size: clamp(55px, 16vw, 105px);
+            }
 
             .footer-bottom {
                 margin-top: 10vh;
@@ -1594,7 +1758,9 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html { scroll-behavior: auto !important; }
+            html {
+                scroll-behavior: auto !important;
+            }
 
             *,
             *::before,
@@ -1604,7 +1770,9 @@
                 transition-duration: 0.01ms !important;
             }
 
-            .grain { display: none; }
+            .grain {
+                display: none;
+            }
         }
     </style>
 </head>
@@ -1638,7 +1806,8 @@
 
     <!-- HOVER PREVIEW CONTAINER FOR PROJECTS LIST -->
     <div class="project-hover-preview" id="hoverPreview">
-        <img src="" alt="Project Preview" id="hoverPreviewImg" />
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1' height='1'%3E%3C/svg%3E"
+            alt="Project Preview" id="hoverPreviewImg" width="400" height="200" />
     </div>
 
     <!-- NAVIGATION -->
@@ -1706,7 +1875,7 @@
     </header>
 
     <!-- MOBILE MENU -->
-     <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
             <div class="mobile-menu-meta">Navigation</div>
             <a href="#work" class="mobile-link">WORK</a>
@@ -1750,13 +1919,13 @@
                     <path
                         d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                 </svg></a>
-                <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
-                        class="social-icon-btn" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
+            <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener" class="social-icon-btn"
+                aria-label="YouTube">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                </svg>
+            </a>
         </div>
     </div>
 
@@ -1766,7 +1935,8 @@
         <section class="hero section" id="hero">
             <div class="hero-pin">
                 <div class="hero-media">
-                    <img src="./pexels-dongdilac-37586668.jpg" alt="Hero Background" loading="eager" />
+                    <img src="./pexels-dongdilac-37586668.jpg" alt="Hero Background" loading="eager" width="1463"
+                        height="823" />
                 </div>
                 <div class="hero-overlay"></div>
                 <div class="hero-vignette"></div>
@@ -1898,7 +2068,7 @@
             </div>
         </section>
 
-        <!-- HORIZONTAL WORK (FEATURED PORTFOLIO) -->
+        <!-- HORIZONTAL WORK -->
         <section class="work-horizontal section" id="work">
             <div class="horizontal-pin">
                 <div class="horizontal-header">
@@ -1908,9 +2078,10 @@
 
                 <div class="horizontal-track" id="horizontalTrack">
 
-                    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" />
+                            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" width="866" height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">01</div>
@@ -1919,9 +2090,10 @@
                         </div>
                     </a>
 
-                    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" />
+                            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" width="866" height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">02</div>
@@ -1932,7 +2104,8 @@
 
                     <a href="https://englishcares.com/" target="_blank" rel="noopener" class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="./englishpng.png" alt="Thinkbound" loading="lazy" />
+                            <img src="./englishpng.png" alt="English Cares Website" loading="lazy" width="866"
+                                height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">03</div>
@@ -1941,9 +2114,11 @@
                         </div>
                     </a>
 
-                    <a href="https://careandrepair.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://careandrepair.com/" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="kaminskiy.png" alt="Waind K" loading="lazy" />
+                            <img src="kaminskiy.png" alt="Kamensiky Care & Repair" loading="lazy" width="866"
+                                height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">04</div>
@@ -1954,7 +2129,7 @@
 
                     <a href="https://bbprpakistan.com/" target="_blank" rel="noopener" class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="bodybeat.png" alt="MUUV" loading="lazy" />
+                            <img src="bodybeat.png" alt="Bodybeat Group" loading="lazy" width="866" height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">05</div>
@@ -1963,9 +2138,10 @@
                         </div>
                     </a>
 
-                    <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="fitness.png" alt="Osmosip" loading="lazy" />
+                            <img src="fitness.png" alt="FitTrack Pro" loading="lazy" width="866" height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">06</div>
@@ -1974,9 +2150,10 @@
                         </div>
                     </a>
 
-                    <a href="https://puresmile-dentist.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://puresmile-dentist.vercel.app" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="puredental.png" alt="Think One Yachts" loading="lazy" />
+                            <img src="puredental.png" alt="Pure Smile Dental" loading="lazy" width="866" height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">07</div>
@@ -1985,9 +2162,11 @@
                         </div>
                     </a>
 
-                    <a href="https://justinisalive.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                    <a href="https://justinisalive.vercel.app" target="_blank" rel="noopener"
+                        class="work-slide project-hover">
                         <div class="work-image">
-                            <img src="justin.png" alt="Top Spin Technologies" loading="lazy" />
+                            <img src="justin.png" alt="Justin is Alive Portfolio" loading="lazy" width="866"
+                                height="477" />
                         </div>
                         <div class="work-info">
                             <div class="work-number">08</div>
@@ -2016,7 +2195,7 @@
                 class="archive-item project-hover">
                 <div class="archive-visual">
                     <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=75"
-                        alt="Lumina Resorts App" loading="lazy" />
+                        alt="Lumina Resorts App" loading="lazy" width="600" height="400" />
                 </div>
                 <div class="archive-content">
                     <div class="archive-number">01 / LUMINA RESORTS</div>
@@ -2032,7 +2211,7 @@
                 class="archive-item project-hover">
                 <div class="archive-visual">
                     <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=75"
-                        alt="Moonsoon Dinings Platform" loading="lazy" />
+                        alt="Moonsoon Dinings Platform" loading="lazy" width="600" height="400" />
                 </div>
                 <div class="archive-content">
                     <div class="archive-number">02 / MOONSOON DININGS</div>
@@ -2048,7 +2227,7 @@
                 class="archive-item project-hover">
                 <div class="archive-visual">
                     <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=75"
-                        alt="Moonsoon Originals Store" loading="lazy" />
+                        alt="Moonsoon Originals Store" loading="lazy" width="600" height="400" />
                 </div>
                 <div class="archive-content">
                     <div class="archive-number">03 / MOONSOON ORIGINALS</div>
@@ -2259,7 +2438,7 @@
         <section class="studio section" id="studio">
             <div class="studio-bg">
                 <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=75"
-                    alt="Studio background" loading="lazy" />
+                    alt="Studio background" loading="lazy" width="1600" height="900" />
             </div>
             <div class="studio-overlay"></div>
             <div class="studio-content">
@@ -2388,7 +2567,7 @@
             <div class="footer-brand">ABDULLAH<br />KHAN</div>
             <div>
                 <div class="footer-column-title">Connect & Socials</div>
-                <p style="font-size: 13px; color: var(--gray); margin: 0 0 15px;">Feel free to reach out across any
+                <p style="font-size: 13px; color: var(--white); margin: 0 0 15px;">Feel free to reach out across any
                     platform for collaboration or project inquiries.</p>
                 <div class="footer-social-grid social-icon-list">
                     <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener"
@@ -2442,7 +2621,7 @@
         </div>
     </footer>
 
-    <!-- JS SCRIPTS -->
+    <!-- JS SCRIPTS WITH DEFER -->
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
@@ -2522,15 +2701,15 @@
 
                 tl.to(counter, {
                     value: 100,
-                    duration: 0.3,
+                    duration: 0.25,
                     ease: "none",
                     onUpdate: () => { setPercent(counter.value); }
                 })
-                .to(".preloader", {
-                    yPercent: -100,
-                    duration: 0.4,
-                    ease: "power4.inOut"
-                });
+                    .to(".preloader", {
+                        yPercent: -100,
+                        duration: 0.35,
+                        ease: "power4.inOut"
+                    });
             }
 
             function revealPage() {
