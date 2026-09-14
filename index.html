@@ -3,30 +3,25 @@
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
         content="Dutch Angle Studio — Front-End Development, Web Design & Creative Direction by Abdullah Khan." />
     <meta name="theme-color" content="#0A0A0A" />
 
-    <title> Abdullah Khan| Portfolio</title>
+    <title>Abdullah Khan | Portfolio</title>
 
-    <!-- GOOGLE FONTS -->
+    <!-- GOOGLE FONTS PRECONNECT & OPTIMIZED LOADING -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet" />
 
-    <!-- GSAP & LENIS LIBRARIES -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
-
     <style>
         :root {
             --black: #0a0a0a;
             --white: #f5f5f0;
-            --gray: #9a9a95;
+            --gray: #b0b0a8;
             --line: rgba(255, 255, 255, 0.18);
             --dark-line: rgba(10, 10, 10, 0.16);
             --lime: #d6ff3f;
@@ -67,8 +62,7 @@
             overflow: hidden;
         }
 
-        img,
-        video {
+        img {
             display: block;
             max-width: 100%;
         }
@@ -132,31 +126,17 @@
             width: 200%;
             height: 200%;
             pointer-events: none;
-            opacity: 0.065;
+            opacity: 0.05;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.95' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
             animation: grainMove 0.25s steps(2) infinite;
         }
 
         @keyframes grainMove {
-            0% {
-                transform: translate3d(0, 0, 0);
-            }
-
-            25% {
-                transform: translate3d(-2%, 2%, 0);
-            }
-
-            50% {
-                transform: translate3d(2%, -2%, 0);
-            }
-
-            75% {
-                transform: translate3d(1%, 2%, 0);
-            }
-
-            100% {
-                transform: translate3d(-1%, -2%, 0);
-            }
+            0% { transform: translate3d(0, 0, 0); }
+            25% { transform: translate3d(-2%, 2%, 0); }
+            50% { transform: translate3d(2%, -2%, 0); }
+            75% { transform: translate3d(1%, 2%, 0); }
+            100% { transform: translate3d(-1%, -2%, 0); }
         }
 
         .editorial-lines {
@@ -177,15 +157,10 @@
             background: white;
         }
 
-        .editorial-lines::before {
-            left: 3vw;
-        }
+        .editorial-lines::before { left: 3vw; }
+        .editorial-lines::after { right: 3vw; }
 
-        .editorial-lines::after {
-            right: 3vw;
-        }
-
-        /* PRELOADER */
+        /* PRELOADER - FAST & SMOOTH */
         .preloader {
             position: fixed;
             inset: 0;
@@ -216,14 +191,12 @@
             font-size: clamp(24px, 4vw, 42px);
             font-weight: 600;
             letter-spacing: -0.05em;
-            transform: translateY(110%);
         }
 
         .preloader-percent {
             font-size: 11px;
             letter-spacing: 0.1em;
             color: var(--gray);
-            transform: translateY(110%);
         }
 
         .preloader-track {
@@ -247,7 +220,7 @@
             justify-content: space-between;
             font-size: 9px;
             letter-spacing: 0.12em;
-            color: #666;
+            color: var(--gray);
             text-transform: uppercase;
         }
 
@@ -277,9 +250,7 @@
             transition: height 0.45s ease, transform 0.45s ease;
         }
 
-        .nav.scrolled {
-            height: 72px;
-        }
+        .nav.scrolled { height: 72px; }
 
         .nav-inner {
             width: var(--container);
@@ -315,15 +286,13 @@
         }
 
         .brand-stack span:last-child {
-            opacity: 0.55;
+            opacity: 0.75;
             font-size: 11px;
             letter-spacing: 0.13em;
             margin-top: 5px;
         }
 
-        .brand-stack span:first-child {
-            font-size: 18px;
-        }
+        .brand-stack span:first-child { font-size: 18px; }
 
         .nav-right {
             display: flex;
@@ -368,7 +337,6 @@
             transform-origin: left;
         }
 
-        /* SOCIAL ICON WRAPPERS & SVGs */
         .social-icon-list {
             display: flex;
             align-items: center;
@@ -401,9 +369,7 @@
             transform: translateY(-2px);
         }
 
-        .social-icon-btn:hover svg {
-            transform: scale(1.1);
-        }
+        .social-icon-btn:hover svg { transform: scale(1.1); }
 
         .menu-toggle {
             display: none;
@@ -436,9 +402,7 @@
             clip-path: inset(0 0 100% 0);
         }
 
-        .mobile-menu-inner {
-            width: 100%;
-        }
+        .mobile-menu-inner { width: 100%; }
 
         .mobile-menu-meta {
             margin-bottom: 35px;
@@ -465,7 +429,7 @@
             flex-wrap: wrap;
         }
 
-        /* HERO WITH VIDEO BACKGROUND */
+        /* HERO - CLEAN IMAGE BACKDROP */
         .hero {
             height: 200vh;
             background: var(--black);
@@ -484,9 +448,10 @@
             position: absolute;
             inset: 0;
             overflow: hidden;
+            background: radial-gradient(circle at center, #1a1a1a 0%, #0a0a0a 100%);
         }
 
-        .hero-media video {
+        .hero-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -522,7 +487,7 @@
             font-size: 15px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .hero-title {
@@ -545,9 +510,7 @@
             transform: translateY(115%);
         }
 
-        .hero-title .side {
-            text-align: right;
-        }
+        .hero-title .side { text-align: right; }
 
         .hero-scroll {
             position: absolute;
@@ -560,7 +523,7 @@
             font-size: 9px;
             letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.65);
+            color: rgba(255, 255, 255, 0.75);
             writing-mode: vertical-rl;
         }
 
@@ -588,9 +551,7 @@
             align-items: start;
         }
 
-        .intro-copy {
-            max-width: 1100px;
-        }
+        .intro-copy { max-width: 1100px; }
 
         .intro-heading {
             margin: 0;
@@ -622,13 +583,13 @@
             max-width: 460px;
             font-size: 15px;
             line-height: 1.6;
-            color: #4d4d49;
+            color: #333330;
         }
 
         .intro-index {
             text-align: right;
             font-size: 10px;
-            color: #777;
+            color: #555;
             letter-spacing: 0.1em;
             text-transform: uppercase;
         }
@@ -744,9 +705,7 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .work-slide:hover .work-image img {
-            transform: scale(1.05);
-        }
+        .work-slide:hover .work-image img { transform: scale(1.05); }
 
         .work-info {
             display: grid;
@@ -813,7 +772,7 @@
             max-width: 500px;
             font-size: 14px;
             line-height: 1.6;
-            color: #595954;
+            color: #444440;
         }
 
         .archive-item {
@@ -831,13 +790,8 @@
             color: inherit;
         }
 
-        .archive-item:nth-child(even) .archive-visual {
-            order: 2;
-        }
-
-        .archive-item:nth-child(even) .archive-content {
-            order: 1;
-        }
+        .archive-item:nth-child(even) .archive-visual { order: 2; }
+        .archive-item:nth-child(even) .archive-content { order: 1; }
 
         .archive-visual {
             position: relative;
@@ -855,19 +809,15 @@
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        .archive-item:hover .archive-visual img {
-            transform: scale(1.05);
-        }
+        .archive-item:hover .archive-visual img { transform: scale(1.05); }
 
-        .archive-content {
-            position: relative;
-        }
+        .archive-content { position: relative; }
 
         .archive-number {
             margin-bottom: 35px;
             font-size: 10px;
             letter-spacing: 0.1em;
-            color: #777;
+            color: #555;
         }
 
         .archive-project-title {
@@ -883,7 +833,7 @@
         .archive-project-desc {
             max-width: 400px;
             margin-top: 45px;
-            color: #5d5d58;
+            color: #444440;
             font-size: 14px;
             line-height: 1.6;
         }
@@ -895,7 +845,7 @@
             font-size: 9px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #777;
+            color: #555;
         }
 
         /* CUSTOM CURSOR */
@@ -935,7 +885,7 @@
             font-weight: 600;
         }
 
-        /* FLOATING HOVER PREVIEW IMAGE FOR PROJECTS LIST */
+        /* FLOATING HOVER PREVIEW IMAGE */
         .project-hover-preview {
             position: fixed;
             top: 0;
@@ -999,12 +949,10 @@
 
         .process-index {
             font-size: 11px;
-            color: #777;
+            color: #555;
         }
 
-        .process-steps {
-            border-top: 1px solid var(--dark-line);
-        }
+        .process-steps { border-top: 1px solid var(--dark-line); }
 
         .process-step {
             min-height: 95px;
@@ -1016,12 +964,10 @@
             opacity: 0.25;
         }
 
-        .process-step.active {
-            opacity: 1;
-        }
+        .process-step.active { opacity: 1; }
 
         .process-step-number {
-            color: #777;
+            color: #555;
             font-size: 10px;
         }
 
@@ -1041,7 +987,7 @@
 
         .process-step-description {
             max-width: 270px;
-            color: #666;
+            color: #444;
             font-size: 11px;
             line-height: 1.5;
         }
@@ -1105,7 +1051,7 @@
             max-width: 580px;
             font-size: clamp(16px, 1.5vw, 22px);
             line-height: 1.5;
-            color: rgba(255, 255, 255, 0.75);
+            color: rgba(255, 255, 255, 0.85);
         }
 
         .studio-meta {
@@ -1119,150 +1065,6 @@
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--gray);
-        }
-
-        /* REEL */
-        .reel {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            min-height: 650px;
-            overflow: hidden;
-            background: #151515;
-        }
-
-        .reel-bg {
-            position: absolute;
-            inset: 0;
-        }
-
-        .reel-bg img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: saturate(0.6);
-            transform: scale(1.08);
-        }
-
-        .reel-overlay {
-            position: absolute;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.43);
-        }
-
-        .reel-content {
-            position: relative;
-            z-index: 2;
-            width: var(--container);
-            height: 100%;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 13vh 0 7vh;
-        }
-
-        .reel-heading {
-            margin: 0;
-            max-width: 1000px;
-            font-family: var(--font-display);
-            font-size: clamp(70px, 14vw, 220px);
-            line-height: 0.78;
-            letter-spacing: -0.09em;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-
-        .reel-heading span {
-            display: block;
-        }
-
-        .reel-bottom {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-        }
-
-        .play-button {
-            width: 120px;
-            height: 120px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            transition: background 0.4s ease, color 0.4s ease, transform 0.4s ease;
-        }
-
-        .play-button:hover {
-            background: var(--white);
-            color: var(--black);
-            transform: scale(1.08);
-        }
-
-        .play-button::after {
-            content: "";
-            width: 0;
-            height: 0;
-            border-top: 7px solid transparent;
-            border-bottom: 7px solid transparent;
-            border-left: 10px solid currentColor;
-            margin-left: 4px;
-        }
-
-        .reel-caption {
-            max-width: 300px;
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 11px;
-            line-height: 1.5;
-            text-align: right;
-        }
-
-        /* REEL MODAL */
-        .reel-modal {
-            position: fixed;
-            inset: 0;
-            z-index: 11000;
-            background: var(--black);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            visibility: hidden;
-            opacity: 0;
-            clip-path: inset(100% 0 0 0);
-        }
-
-        .reel-video {
-            width: min(90vw, 1500px);
-            height: 85vh;
-            object-fit: cover;
-            background: #111;
-        }
-
-        .reel-close {
-            position: absolute;
-            top: 30px;
-            right: 4vw;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 10px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-        }
-
-        .reel-close span {
-            display: block;
-            width: 25px;
-            height: 1px;
-            background: currentColor;
-            transform: rotate(45deg);
-        }
-
-        .reel-close span:last-child {
-            margin-left: -25px;
-            transform: rotate(-45deg);
         }
 
         /* MARQUEE */
@@ -1294,9 +1096,7 @@
             text-transform: uppercase;
         }
 
-        .marquee-item::after {
-            content: "—";
-        }
+        .marquee-item::after { content: "—"; }
 
         /* CLIENTS / ALL PROJECTS LIST SECTION */
         .clients {
@@ -1327,7 +1127,7 @@
             max-width: 300px;
             font-size: 12px;
             line-height: 1.5;
-            color: #666;
+            color: #444;
         }
 
         /* Search & Filter Controls */
@@ -1362,9 +1162,7 @@
             transition: border-color 0.3s ease;
         }
 
-        .project-search-input:focus {
-            border-color: var(--black);
-        }
+        .project-search-input:focus { border-color: var(--black); }
 
         .filter-buttons-wrapper {
             display: flex;
@@ -1376,7 +1174,7 @@
             padding: 10px 20px;
             border: 1px solid var(--dark-line);
             background: transparent;
-            color: #666;
+            color: #444;
             font-family: var(--font-display);
             font-size: 10px;
             letter-spacing: 0.1em;
@@ -1393,7 +1191,6 @@
             border-color: var(--black);
         }
 
-        /* Clean Row List Structure */
         .client-list {
             width: var(--container);
             margin: 0 auto;
@@ -1413,9 +1210,7 @@
             transition: opacity 0.3s ease, min-height 0.3s ease;
         }
 
-        .client-row.hidden {
-            display: none !important;
-        }
+        .client-row.hidden { display: none !important; }
 
         .client-name {
             font-family: var(--font-display);
@@ -1428,14 +1223,11 @@
 
         .client-index {
             font-size: 10px;
-            color: #777;
+            color: #555;
         }
 
-        .client-row:hover .client-name {
-            transform: translateX(20px);
-        }
+        .client-row:hover .client-name { transform: translateX(20px); }
 
-        /* View More Button */
         .view-more-container {
             width: var(--container);
             margin: 50px auto 0;
@@ -1463,9 +1255,7 @@
             transform: translateY(-2px);
         }
 
-        .view-more-btn.hidden {
-            display: none !important;
-        }
+        .view-more-btn.hidden { display: none !important; }
 
         /* CTA */
         .cta {
@@ -1521,9 +1311,7 @@
             transition: transform 0.4s ease;
         }
 
-        .cta-link:hover .cta-arrow {
-            transform: translate(10px, -10px);
-        }
+        .cta-link:hover .cta-arrow { transform: translate(10px, -10px); }
 
         .cta-meta {
             margin-top: 14vh;
@@ -1587,15 +1375,10 @@
             text-transform: uppercase;
         }
 
-        .back-top {
-            cursor: pointer;
-        }
+        .back-top { cursor: pointer; }
 
-        /* RESPONSIVE TABLET / MOBILE */
         @media (max-width: 1024px) {
-            .nav-links {
-                display: none;
-            }
+            .nav-links { display: none; }
 
             .intro-grid,
             .archive-header,
@@ -1604,31 +1387,23 @@
                 gap: 35px;
             }
 
-            .intro-bottom {
-                margin-top: 8vh;
-            }
+            .intro-bottom { margin-top: 8vh; }
 
             .archive-item {
                 min-height: auto;
                 padding: 12vh 0;
             }
 
-            .archive-visual {
-                height: 65vh;
-            }
+            .archive-visual { height: 65vh; }
 
             .process-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
             }
 
-            .process-index {
-                display: none;
-            }
+            .process-index { display: none; }
 
-            .footer-top {
-                grid-template-columns: 1fr;
-            }
+            .footer-top { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 767px) {
@@ -1637,34 +1412,22 @@
                 --nav-height: 72px;
             }
 
-            .editorial-lines {
-                opacity: 0.04;
-            }
+            .editorial-lines { opacity: 0.04; }
 
             .nav {
                 mix-blend-mode: normal;
                 color: white;
             }
 
-            .nav-right .social-icon-list {
-                display: none;
-            }
+            .nav-right .social-icon-list { display: none; }
 
-            .menu-toggle {
-                display: flex;
-            }
+            .menu-toggle { display: flex; }
 
-            .hero {
-                height: 150vh;
-            }
+            .hero { height: 150vh; }
 
-            .hero-pin {
-                height: 100vh;
-            }
+            .hero-pin { height: 100vh; }
 
-            .hero-content {
-                padding-bottom: 10vh;
-            }
+            .hero-content { padding-bottom: 10vh; }
 
             .hero-meta {
                 flex-direction: column;
@@ -1679,18 +1442,14 @@
                 line-height: 0.84;
             }
 
-            .hero-scroll {
-                display: none;
-            }
+            .hero-scroll { display: none; }
 
             .intro {
                 min-height: auto;
                 padding: 15vh 0;
             }
 
-            .intro-heading {
-                font-size: clamp(52px, 14vw, 100px);
-            }
+            .intro-heading { font-size: clamp(52px, 14vw, 100px); }
 
             .intro-bottom {
                 grid-template-columns: 1fr;
@@ -1698,9 +1457,7 @@
                 margin-top: 8vh;
             }
 
-            .intro-index {
-                text-align: left;
-            }
+            .intro-index { text-align: left; }
 
             .horizontal-pin {
                 height: auto;
@@ -1729,17 +1486,11 @@
                 gap: 12vh;
             }
 
-            .work-slide {
-                width: 100%;
-            }
+            .work-slide { width: 100%; }
 
-            .work-image {
-                height: 58vh;
-            }
+            .work-image { height: 58vh; }
 
-            .work-info {
-                grid-template-columns: 40px 1fr;
-            }
+            .work-info { grid-template-columns: 40px 1fr; }
 
             .work-category {
                 grid-column: 2;
@@ -1747,17 +1498,11 @@
                 margin-top: -10px;
             }
 
-            .archive {
-                padding-top: 12vh;
-            }
+            .archive { padding-top: 12vh; }
 
-            .archive-header {
-                margin-bottom: 5vh;
-            }
+            .archive-header { margin-bottom: 5vh; }
 
-            .archive-title {
-                font-size: clamp(58px, 16vw, 105px);
-            }
+            .archive-title { font-size: clamp(58px, 16vw, 105px); }
 
             .archive-item,
             .archive-item:nth-child(even) {
@@ -1772,21 +1517,13 @@
                 order: initial;
             }
 
-            .archive-visual {
-                height: 65vh;
-            }
+            .archive-visual { height: 65vh; }
 
-            .archive-project-title {
-                font-size: clamp(54px, 15vw, 105px);
-            }
+            .archive-project-title { font-size: clamp(54px, 15vw, 105px); }
 
-            .archive-project-desc {
-                margin-top: 30px;
-            }
+            .archive-project-desc { margin-top: 30px; }
 
-            .process {
-                height: auto;
-            }
+            .process { height: auto; }
 
             .process-pin {
                 height: auto;
@@ -1804,25 +1541,15 @@
                 grid-template-columns: 40px 1fr;
             }
 
-            .process-step-content {
-                display: block;
-            }
+            .process-step-content { display: block; }
 
-            .process-step-description {
-                margin-top: 6px;
-            }
+            .process-step-description { margin-top: 6px; }
 
-            .studio {
-                min-height: 115vh;
-            }
+            .studio { min-height: 115vh; }
 
-            .studio-heading {
-                font-size: clamp(62px, 17vw, 115px);
-            }
+            .studio-heading { font-size: clamp(62px, 17vw, 115px); }
 
-            .studio-copy {
-                font-size: 15px;
-            }
+            .studio-copy { font-size: 15px; }
 
             .studio-meta {
                 display: grid;
@@ -1830,80 +1557,27 @@
                 gap: 20px;
             }
 
-            .reel {
-                min-height: 100svh;
-            }
+            .marquee { padding: 20px 0; }
 
-            .reel-content {
-                padding: 12vh 0 6vh;
-            }
+            .clients { padding: 13vh 0; }
 
-            .reel-heading {
-                font-size: clamp(70px, 20vw, 135px);
-            }
+            .clients-header { display: block; }
 
-            .reel-bottom {
-                align-items: flex-end;
-            }
+            .clients-title { font-size: clamp(60px, 17vw, 110px); }
 
-            .play-button {
-                width: 85px;
-                height: 85px;
-            }
+            .clients-copy { margin-top: 35px; }
 
-            .reel-caption {
-                max-width: 170px;
-                font-size: 9px;
-            }
+            .client-row { min-height: 80px; }
 
-            .reel-video {
-                width: 94vw;
-                height: 70vh;
-            }
+            .client-name { font-size: clamp(25px, 7vw, 45px); }
 
-            .marquee {
-                padding: 20px 0;
-            }
+            .cta { min-height: 90vh; }
 
-            .clients {
-                padding: 13vh 0;
-            }
+            .cta-heading { font-size: clamp(65px, 19vw, 130px); }
 
-            .clients-header {
-                display: block;
-            }
+            .cta-meta { margin-top: 10vh; }
 
-            .clients-title {
-                font-size: clamp(60px, 17vw, 110px);
-            }
-
-            .clients-copy {
-                margin-top: 35px;
-            }
-
-            .client-row {
-                min-height: 80px;
-            }
-
-            .client-name {
-                font-size: clamp(25px, 7vw, 45px);
-            }
-
-            .cta {
-                min-height: 90vh;
-            }
-
-            .cta-heading {
-                font-size: clamp(65px, 19vw, 130px);
-            }
-
-            .cta-meta {
-                margin-top: 10vh;
-            }
-
-            .footer-brand {
-                font-size: clamp(55px, 16vw, 105px);
-            }
+            .footer-brand { font-size: clamp(55px, 16vw, 105px); }
 
             .footer-bottom {
                 margin-top: 10vh;
@@ -1920,9 +1594,7 @@
         }
 
         @media (prefers-reduced-motion: reduce) {
-            html {
-                scroll-behavior: auto !important;
-            }
+            html { scroll-behavior: auto !important; }
 
             *,
             *::before,
@@ -1932,9 +1604,7 @@
                 transition-duration: 0.01ms !important;
             }
 
-            .grain {
-                display: none;
-            }
+            .grain { display: none; }
         }
     </style>
 </head>
@@ -1990,7 +1660,6 @@
                     <a href="#contact" class="nav-link"><span>Contact</span></a>
                 </nav>
 
-                <!-- Social Icons in Header -->
                 <div class="social-icon-list">
                     <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener"
                         class="social-icon-btn" aria-label="Instagram">
@@ -2037,7 +1706,7 @@
     </header>
 
     <!-- MOBILE MENU -->
-    <div class="mobile-menu" id="mobileMenu">
+     <div class="mobile-menu" id="mobileMenu">
         <div class="mobile-menu-inner">
             <div class="mobile-menu-meta">Navigation</div>
             <a href="#work" class="mobile-link">WORK</a>
@@ -2093,13 +1762,11 @@
 
     <main id="top">
 
-        <!-- HERO WITH BG VIDEO -->
+        <!-- HERO SECTION -->
         <section class="hero section" id="hero">
             <div class="hero-pin">
                 <div class="hero-media">
-                    <video autoplay loop muted playsinline poster="./pexels-dongdilac-37586668.jpg">
-                        <source src="" type="video/mp4" />
-                    </video>
+                    <img src="./pexels-dongdilac-37586668.jpg" alt="Hero Background" loading="eager" />
                 </div>
                 <div class="hero-overlay"></div>
                 <div class="hero-vignette"></div>
@@ -2241,103 +1908,95 @@
 
                 <div class="horizontal-track" id="horizontalTrack">
 
-    <!-- WORK 01: PEXEL SNAG -->
-    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">01</div>
-            <div class="work-title">PEXEL SNAG</div>
-            <div class="work-category">IMAGE EXTRACTOR<br />JS, GSAP</div>
-        </div>
-    </a>
+                    <a href="https://pexel-snag.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./pixelsnag.png" alt="Pixel Snag" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">01</div>
+                            <div class="work-title">PEXEL SNAG</div>
+                            <div class="work-category">IMAGE EXTRACTOR<br />JS, GSAP</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 02: SAAF SAFAI -->
-    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">02</div>
-            <div class="work-title">SAAFSAFAI</div>
-            <div class="work-category">CAR WASH<br />Brand, JS</div>
-        </div>
-    </a>
+                    <a href="https://saaf-safai.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./saafsafai.png" alt="Saaf Safai" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">02</div>
+                            <div class="work-title">SAAFSAFAI</div>
+                            <div class="work-category">CAR WASH<br />Brand, JS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 03: ENGLISH -->
-    <a href="https://englishcares.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="./englishpng.png" alt="Thinkbound" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">03</div>
-            <div class="work-title">ENGLISH CARES</div>
-            <div class="work-category">BRANDING<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <a href="https://englishcares.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="./englishpng.png" alt="Thinkbound" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">03</div>
+                            <div class="work-title">ENGLISH CARES</div>
+                            <div class="work-category">BRANDING<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 04: KAMENSIKY -->
-    <a href="https://careandrepair.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="kaminskiy.png" alt="Waind K" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">04</div>
-            <div class="work-title">KAMENSIKY</div>
-            <div class="work-category">CARE & REPAIR<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <a href="https://careandrepair.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="kaminskiy.png" alt="Waind K" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">04</div>
+                            <div class="work-title">KAMENSIKY</div>
+                            <div class="work-category">CARE & REPAIR<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 05: BODY & BEAT -->
-    <a href="https://bbprpakistan.com/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="bodybeat.png" alt="MUUV" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">05</div>
-            <div class="work-title">BODYBEAT GROUP</div>
-            <div class="work-category">EVENTS MANAGMENT<br />WORDPRESS</div>
-        </div>
-    </a>
+                    <a href="https://bbprpakistan.com/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="bodybeat.png" alt="MUUV" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">05</div>
+                            <div class="work-title">BODYBEAT GROUP</div>
+                            <div class="work-category">EVENTS MANAGMENT<br />WORDPRESS</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 06: FITTRACK PRO -->
-    <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="fitness.png" alt="Osmosip" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">06</div>
-            <div class="work-title">FITTRACK PRO</div>
-            <div class="work-category">HEALTH & FITNESS<br />MERN - FULLSTACK</div>
-        </div>
-    </a>
+                    <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="fitness.png" alt="Osmosip" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">06</div>
+                            <div class="work-title">FITTRACK PRO</div>
+                            <div class="work-category">HEALTH & FITNESS<br />MERN - FULLSTACK</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 07: PURE SMILE DENTAL -->
-    <a href="https://puresmile-dentist.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="puredental.png" alt="Think One Yachts" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">07</div>
-            <div class="work-title">PURE SMILE DENTAL</div>
-            <div class="work-category">DENTAL TREATMENTS<br />FRONTEND</div>
-        </div>
-    </a>
+                    <a href="https://puresmile-dentist.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="puredental.png" alt="Think One Yachts" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">07</div>
+                            <div class="work-title">PURE SMILE DENTAL</div>
+                            <div class="work-category">DENTAL TREATMENTS<br />FRONTEND</div>
+                        </div>
+                    </a>
 
-    <!-- WORK 08: JUSTIN IS ALIVE -->
-    <a href="https://justinisalive.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
-        <div class="work-image">
-            <img src="justin.png" alt="Top Spin Technologies" loading="lazy" />
-        </div>
-        <div class="work-info">
-            <div class="work-number">08</div>
-            <div class="work-title">JUSTIN IS ALIVE</div>
-            <div class="work-category">PERSONAL PORTFOLIO<br />FRONTEND</div>
-        </div>
-    </a>
+                    <a href="https://justinisalive.vercel.app" target="_blank" rel="noopener" class="work-slide project-hover">
+                        <div class="work-image">
+                            <img src="justin.png" alt="Top Spin Technologies" loading="lazy" />
+                        </div>
+                        <div class="work-info">
+                            <div class="work-number">08</div>
+                            <div class="work-title">JUSTIN IS ALIVE</div>
+                            <div class="work-category">PERSONAL PORTFOLIO<br />FRONTEND</div>
+                        </div>
+                    </a>
 
-</div>
+                </div>
             </div>
         </section>
 
@@ -2353,11 +2012,10 @@
                 </div>
             </div>
 
-            <!-- ARCHIVE ITEM 01 -->
             <a href="https://luminaresorts.vercel.app" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=75"
                         alt="Lumina Resorts App" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2370,11 +2028,10 @@
                 </div>
             </a>
 
-            <!-- ARCHIVE ITEM 02 -->
             <a href="https://moonsoon-dinings.vercel.app" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=75"
                         alt="Moonsoon Dinings Platform" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2387,11 +2044,10 @@
                 </div>
             </a>
 
-            <!-- ARCHIVE ITEM 03 -->
             <a href="https://dev-moonsoonorignals.pantheonsite.io" target="_blank" rel="noopener"
                 class="archive-item project-hover">
                 <div class="archive-visual">
-                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1800&q=85"
+                    <img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?auto=format&fit=crop&w=1200&q=75"
                         alt="Moonsoon Originals Store" loading="lazy" />
                 </div>
                 <div class="archive-content">
@@ -2405,7 +2061,7 @@
             </a>
         </section>
 
-        <!-- ALL PROJECTS OVERVIEW (SIMPLE LIST FORMAT WITH SEARCH & VIEW MORE) -->
+        <!-- ALL PROJECTS OVERVIEW -->
         <section class="clients section" id="all-projects">
             <div class="clients-header">
                 <h2 class="clients-title">ALL LIVE<br />PROJECTS</h2>
@@ -2413,11 +2069,10 @@
                     dynamic tools.</p>
             </div>
 
-            <!-- Controls: Search Bar & Category Filters -->
             <div class="project-controls">
                 <div class="search-wrapper">
                     <input type="text" id="projectSearch" class="project-search-input"
-                        placeholder="Search projects by name..." />
+                        placeholder="Search projects by name..." aria-label="Search projects by name" />
                 </div>
                 <div class="filter-buttons-wrapper">
                     <button class="filter-btn active" data-category="all">All</button>
@@ -2428,7 +2083,6 @@
                 </div>
             </div>
 
-            <!-- Clean Text Row List With Individual Preview Image Attributes -->
             <div class="client-list" id="clientListContainer">
                 <a href="https://groomers.vercel.app" target="_blank" rel="noopener"
                     class="client-row list-preview-hover" data-category="frontend" data-title="groomer's salon"
@@ -2537,7 +2191,7 @@
                     data-preview="./orbit.png"><span class="client-name">ORBIT</span><span
                         class="client-index">27</span></a>
                 <a href="https://fitness247.vercel.app/" target="_blank" rel="noopener"
-                    class="client-row list-preview-hover" data-category="react" data-title="fittrack pro"
+                    class="client-row list-preview-hover" data-category="frontend" data-title="fittrack pro"
                     data-preview="./fitness.png"><span class="client-name">FITTRACK PRO</span><span
                         class="client-index">28</span></a>
                 <a href="https://ms-learner.vercel.app/" target="_blank" rel="noopener"
@@ -2550,7 +2204,6 @@
                         class="client-index">30</span></a>
             </div>
 
-            <!-- View More Button -->
             <div class="view-more-container">
                 <button class="view-more-btn" id="viewMoreBtn">View More Projects (+19)</button>
             </div>
@@ -2605,7 +2258,7 @@
         <!-- STUDIO / ABOUT -->
         <section class="studio section" id="studio">
             <div class="studio-bg">
-                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=2200&q=85"
+                <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1600&q=75"
                     alt="Studio background" loading="lazy" />
             </div>
             <div class="studio-overlay"></div>
@@ -2616,7 +2269,6 @@
                     front-end technologies, clean CSS architectures, JavaScript, React, and backend integration with
                     PHP/MySQL.</p>
 
-                <!-- Social Icons in About Section -->
                 <div class="social-icon-list" style="margin-top: 25px;">
                     <a href="https://www.instagram.com/kkabdull247" target="_blank" rel="noopener"
                         class="social-icon-btn" aria-label="Instagram"><svg viewBox="0 0 24 24">
@@ -2669,34 +2321,6 @@
             </div>
         </section>
 
-        <!-- REEL -->
-        <section class="reel section" id="reel">
-            <div class="reel-bg">
-                <img src="./pexels-zishan-27898009.jpg" alt="Cinema reel" loading="lazy" />
-            </div>
-            <div class="reel-overlay"></div>
-            <div class="reel-content">
-                <span class="eyebrow">07 / Creative Showcase</span>
-                <h2 class="reel-heading"><span>WATCH</span><span>WORK</span><span>REEL.</span></h2>
-                <div class="reel-bottom">
-                    <button class="play-button magnetic" id="openReel" aria-label="Play reel"></button>
-                    <p class="reel-caption">Interactive motion showcase for web design concepts and visual front-end
-                        builds.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- REEL MODAL -->
-        <div class="reel-modal" id="reelModal">
-            <button class="reel-close" id="closeReel">
-                <span></span><span></span> CLOSE REEL
-            </button>
-            <video autoplay loop muted class="reel-video " id="reelVideo" controls playsinline preload="metadata"
-                poster="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=2000&q=85">
-                <source src="./I’m_a_Junior_Front_End_Develop.mp4" type="video/mp4" />
-            </video>
-        </div>
-
         <!-- MARQUEE -->
         <section class="marquee section">
             <div class="marquee-track" id="marqueeTrack">
@@ -2716,7 +2340,7 @@
         <!-- CTA SECTION -->
         <section class="cta section" id="contact">
             <div class="cta-inner">
-                <span class="eyebrow">08 / Start A Project</span>
+                <span class="eyebrow">07 / Start A Project</span>
                 <h2 class="cta-heading">
                     <span class="cta-line"><span>NEED A</span></span>
                     <span class="cta-line"><span>DEVELOPER?</span></span>
@@ -2802,7 +2426,7 @@
                             <path
                                 d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.762-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                         </svg></a>
-                        <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
+                    <a href="https://www.youtube.com/@kkabdull247" target="_blank" rel="noopener"
                         class="social-icon-btn" aria-label="YouTube">
                         <svg viewBox="0 0 24 24">
                             <path
@@ -2818,9 +2442,14 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT -->
+    <!-- JS SCRIPTS -->
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/lenis@1.3.8/dist/lenis.min.js"></script>
+
+    <!-- JAVASCRIPT LOGIC -->
     <script>
-        (() => {
+        document.addEventListener("DOMContentLoaded", () => {
             "use strict";
 
             if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") {
@@ -2844,11 +2473,6 @@
 
             const menuToggle = document.getElementById("menuToggle");
             const mobileMenu = document.getElementById("mobileMenu");
-
-            const openReel = document.getElementById("openReel");
-            const closeReel = document.getElementById("closeReel");
-            const reelModal = document.getElementById("reelModal");
-            const reelVideo = document.getElementById("reelVideo");
 
             const backTop = document.getElementById("backTop");
             const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -2886,7 +2510,7 @@
                 if (preloaderLine) preloaderLine.style.width = rounded + "%";
             }
 
-            /* PRELOADER */
+            /* FAST AND SMOOTH PRELOADER */
             function runPreloader() {
                 if (reducedMotion) {
                     gsap.set(".preloader", { yPercent: -100 });
@@ -2896,15 +2520,17 @@
                 const counter = { value: 0 };
                 const tl = gsap.timeline({ onComplete: revealPage });
 
-                tl.to(".preloader-logo", { y: 0, duration: 0.8, ease: "power4.out" })
-                    .to(".preloader-percent", { y: 0, duration: 0.7, ease: "power4.out" }, "-=0.55")
-                    .to(counter, {
-                        value: 100, duration: 1.65, ease: "power2.inOut",
-                        onUpdate: () => { setPercent(counter.value); }
-                    }, "-=0.25")
-                    .to(".preloader-brand", { y: -20, opacity: 0, duration: 0.35, ease: "power2.in" })
-                    .to(".preloader-track, .preloader-caption", { opacity: 0, duration: 0.25 }, "<")
-                    .to(".preloader", { yPercent: -100, duration: 1.05, ease: "power4.inOut" });
+                tl.to(counter, {
+                    value: 100,
+                    duration: 0.3,
+                    ease: "none",
+                    onUpdate: () => { setPercent(counter.value); }
+                })
+                .to(".preloader", {
+                    yPercent: -100,
+                    duration: 0.4,
+                    ease: "power4.inOut"
+                });
             }
 
             function revealPage() {
@@ -2923,12 +2549,12 @@
                 }
 
                 const tl = gsap.timeline();
-                tl.to(".hero-title-line:nth-child(1) span", { y: 0, duration: 1.1, ease: "power4.out" })
-                    .to(".hero-title-line:nth-child(2) span", { y: 0, duration: 1.1, ease: "power4.out" }, "-=0.8")
-                    .to(".hero-title-line:nth-child(3) span", { y: 0, duration: 1.15, ease: "power4.out" }, "-=0.8");
+                tl.to(".hero-title-line:nth-child(1) span", { y: 0, duration: 0.8, ease: "power4.out" })
+                    .to(".hero-title-line:nth-child(2) span", { y: 0, duration: 0.8, ease: "power4.out" }, "-=0.6")
+                    .to(".hero-title-line:nth-child(3) span", { y: 0, duration: 0.8, ease: "power4.out" }, "-=0.6");
 
-                gsap.from(".hero-meta > div", { opacity: 0, y: 20, duration: 0.8, stagger: 0.1, delay: 0.4, ease: "power3.out" });
-                gsap.from(".hero-scroll", { opacity: 0, y: 20, duration: 0.8, delay: 1, ease: "power3.out" });
+                gsap.from(".hero-meta > div", { opacity: 0, y: 20, duration: 0.6, stagger: 0.1, ease: "power3.out" });
+                gsap.from(".hero-scroll", { opacity: 0, y: 20, duration: 0.6, delay: 0.4, ease: "power3.out" });
             }
 
             function initHeroScroll() {
@@ -2937,7 +2563,7 @@
                 mm.add("(min-width: 768px)", () => {
                     const heroTitle = document.querySelector(".hero-title");
                     const heroMeta = document.querySelector(".hero-meta");
-                    const heroMedia = document.querySelector(".hero-media video");
+                    const heroMedia = document.querySelector(".hero-media img");
                     const heroOverlay = document.querySelector(".hero-overlay");
 
                     const tl = gsap.timeline({
@@ -2966,14 +2592,14 @@
                 gsap.utils.toArray(".intro-heading .line-mask").forEach((mask, index) => {
                     const target = mask.querySelector("span");
                     gsap.to(target, {
-                        y: 0, duration: 1, ease: "power4.out",
+                        y: 0, duration: 0.8, ease: "power4.out",
                         scrollTrigger: { trigger: mask, start: "top 85%", toggleActions: "play none none reverse" },
-                        delay: index * 0.06
+                        delay: index * 0.05
                     });
                 });
 
                 gsap.from(".intro-description", {
-                    y: 40, opacity: 0, duration: 1, ease: "power3.out",
+                    y: 40, opacity: 0, duration: 0.8, ease: "power3.out",
                     scrollTrigger: { trigger: ".intro-bottom", start: "top 80%" }
                 });
             }
@@ -3011,10 +2637,10 @@
             function initCursor() {
                 if (isTouch || reducedMotion || !cursor || !cursorLabel) return;
 
-                const moveX = gsap.quickTo(cursor, "x", { duration: 0.25, ease: "power3" });
-                const moveY = gsap.quickTo(cursor, "y", { duration: 0.25, ease: "power3" });
-                const labelX = gsap.quickTo(cursorLabel, "x", { duration: 0.45, ease: "power3" });
-                const labelY = gsap.quickTo(cursorLabel, "y", { duration: 0.45, ease: "power3" });
+                const moveX = gsap.quickTo(cursor, "x", { duration: 0.2, ease: "power3" });
+                const moveY = gsap.quickTo(cursor, "y", { duration: 0.2, ease: "power3" });
+                const labelX = gsap.quickTo(cursorLabel, "x", { duration: 0.35, ease: "power3" });
+                const labelY = gsap.quickTo(cursorLabel, "y", { duration: 0.35, ease: "power3" });
 
                 window.addEventListener("mousemove", (e) => {
                     moveX(e.clientX); moveY(e.clientY);
@@ -3023,22 +2649,21 @@
 
                 document.querySelectorAll(".project-hover").forEach((el) => {
                     el.addEventListener("mouseenter", () => {
-                        gsap.to(cursor, { scale: 0.4, duration: 0.35 });
-                        gsap.to(cursorLabel, { opacity: 1, scale: 1, duration: 0.45 });
+                        gsap.to(cursor, { scale: 0.4, duration: 0.25 });
+                        gsap.to(cursorLabel, { opacity: 1, scale: 1, duration: 0.35 });
                     });
                     el.addEventListener("mouseleave", () => {
-                        gsap.to(cursor, { scale: 1, duration: 0.35 });
-                        gsap.to(cursorLabel, { opacity: 0, scale: 0.4, duration: 0.3 });
+                        gsap.to(cursor, { scale: 1, duration: 0.25 });
+                        gsap.to(cursorLabel, { opacity: 0, scale: 0.4, duration: 0.25 });
                     });
                 });
             }
 
-            /* HOVER IMAGE PREVIEW SYSTEM FOR ALL PROJECTS LIST */
             function initProjectListHoverPreviews() {
                 if (isTouch || reducedMotion || !hoverPreview || !hoverPreviewImg) return;
 
-                const setPreviewX = gsap.quickTo(hoverPreview, "x", { duration: 0.35, ease: "power3" });
-                const setPreviewY = gsap.quickTo(hoverPreview, "y", { duration: 0.35, ease: "power3" });
+                const setPreviewX = gsap.quickTo(hoverPreview, "x", { duration: 0.25, ease: "power3" });
+                const setPreviewY = gsap.quickTo(hoverPreview, "y", { duration: 0.25, ease: "power3" });
 
                 window.addEventListener("mousemove", (e) => {
                     setPreviewX(e.clientX + 140);
@@ -3053,7 +2678,7 @@
                             gsap.to(hoverPreview, {
                                 opacity: 1,
                                 scale: 1,
-                                duration: 0.4,
+                                duration: 0.3,
                                 ease: "power3.out"
                             });
                         }
@@ -3063,7 +2688,7 @@
                         gsap.to(hoverPreview, {
                             opacity: 0,
                             scale: 0.85,
-                            duration: 0.3,
+                            duration: 0.25,
                             ease: "power2.in"
                         });
                     });
@@ -3090,31 +2715,8 @@
 
             function initStudio() {
                 if (reducedMotion) return;
-                gsap.from(".studio-heading", { y: 100, opacity: 0, duration: 1.2, ease: "power4.out", scrollTrigger: { trigger: ".studio", start: "top 75%" } });
-                gsap.from(".studio-copy", { y: 60, opacity: 0, duration: 1, delay: 0.1, ease: "power3.out", scrollTrigger: { trigger: ".studio-copy", start: "top 85%" } });
-            }
-
-            function initReel() {
-                if (!openReel || !closeReel || !reelModal) return;
-
-                const openTL = gsap.timeline({
-                    paused: true,
-                    onStart: () => { reelModal.style.visibility = "visible"; body.classList.add("no-scroll"); }
-                });
-                openTL.to(reelModal, { opacity: 1, clipPath: "inset(0% 0% 0% 0%)", duration: 0.8, ease: "power4.inOut" })
-                    .fromTo(".reel-video", { scale: 0.86, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.8, ease: "power4.out" }, "-=0.4");
-
-                const closeTL = gsap.timeline({
-                    paused: true,
-                    onComplete: () => {
-                        reelModal.style.visibility = "hidden"; body.classList.remove("no-scroll");
-                        if (reelVideo) { reelVideo.pause(); reelVideo.currentTime = 0; }
-                    }
-                });
-                closeTL.to(reelModal, { opacity: 0, clipPath: "inset(100% 0% 0% 0%)", duration: 0.7, ease: "power4.inOut" });
-
-                openReel.addEventListener("click", () => { closeTL.pause(0); openTL.restart(); if (reelVideo) reelVideo.play().catch(() => { }); });
-                closeReel.addEventListener("click", () => { openTL.pause(); closeTL.restart(); });
+                gsap.from(".studio-heading", { y: 80, opacity: 0, duration: 0.9, ease: "power4.out", scrollTrigger: { trigger: ".studio", start: "top 75%" } });
+                gsap.from(".studio-copy", { y: 40, opacity: 0, duration: 0.8, delay: 0.1, ease: "power3.out", scrollTrigger: { trigger: ".studio-copy", start: "top 85%" } });
             }
 
             function initMarquee() {
@@ -3131,8 +2733,8 @@
             function initMagnetic() {
                 if (isTouch || reducedMotion) return;
                 document.querySelectorAll(".magnetic").forEach((el) => {
-                    const xTo = gsap.quickTo(el, "x", { duration: 0.45, ease: "power3" });
-                    const yTo = gsap.quickTo(el, "y", { duration: 0.45, ease: "power3" });
+                    const xTo = gsap.quickTo(el, "x", { duration: 0.35, ease: "power3" });
+                    const yTo = gsap.quickTo(el, "y", { duration: 0.35, ease: "power3" });
                     el.addEventListener("mousemove", (e) => {
                         const rect = el.getBoundingClientRect();
                         xTo(clamp((e.clientX - (rect.left + rect.width / 2)) * 0.2, -15, 15));
@@ -3165,26 +2767,25 @@
                 menuOpen = true; body.classList.add("no-scroll");
                 gsap.timeline()
                     .set(mobileMenu, { visibility: "visible" })
-                    .to(mobileMenu, { clipPath: "inset(0 0 0% 0)", duration: 0.8, ease: "power4.inOut" })
-                    .to(".mobile-link", { y: 0, duration: 0.8, stagger: 0.08 }, "-=0.4");
+                    .to(mobileMenu, { clipPath: "inset(0 0 0% 0)", duration: 0.6, ease: "power4.inOut" })
+                    .to(".mobile-link", { y: 0, duration: 0.6, stagger: 0.05 }, "-=0.3");
             }
             function closeMobileMenu() {
                 if (!menuOpen) return;
                 menuOpen = false;
                 gsap.timeline({ onComplete: () => { mobileMenu.style.visibility = "hidden"; body.classList.remove("no-scroll"); } })
-                    .to(".mobile-link", { y: "110%", duration: 0.45 })
-                    .to(mobileMenu, { clipPath: "inset(0 0 100% 0)", duration: 0.7 }, "-=0.2");
+                    .to(".mobile-link", { y: "110%", duration: 0.35 })
+                    .to(mobileMenu, { clipPath: "inset(0 0 100% 0)", duration: 0.5 }, "-=0.2");
             }
             if (menuToggle) menuToggle.addEventListener("click", () => menuOpen ? closeMobileMenu() : openMobileMenu());
 
-            if (backTop) backTop.addEventListener("click", () => lenis ? lenis.scrollTo(0, { duration: 1.6 }) : window.scrollTo({ top: 0, behavior: "smooth" }));
+            if (backTop) backTop.addEventListener("click", () => lenis ? lenis.scrollTo(0, { duration: 1.2 }) : window.scrollTo({ top: 0, behavior: "smooth" }));
 
             function initCTA() {
                 if (reducedMotion) return;
-                gsap.to(".cta-line span", { y: 0, duration: 1.1, stagger: 0.09, ease: "power4.out", scrollTrigger: { trigger: ".cta", start: "top 70%" } });
+                gsap.to(".cta-line span", { y: 0, duration: 0.8, stagger: 0.08, ease: "power4.out", scrollTrigger: { trigger: ".cta", start: "top 70%" } });
             }
 
-            /* SEARCH, CATEGORY FILTER & VIEW MORE SYSTEM */
             function initProjectListSystem() {
                 const searchInput = document.getElementById('projectSearch');
                 const filterBtns = document.querySelectorAll('.filter-btn');
@@ -3272,7 +2873,6 @@
                 initProjectListHoverPreviews();
                 initProcess();
                 initStudio();
-                initReel();
                 initMarquee();
                 initMagnetic();
                 initNavigation();
@@ -3280,8 +2880,8 @@
                 initProjectListSystem();
             }
 
-            document.readyState === "loading" ? document.addEventListener("DOMContentLoaded", init) : init();
-        })();
+            init();
+        });
     </script>
 </body>
 
